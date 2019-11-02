@@ -1,0 +1,28 @@
+{{ define "content" }}
+<div class="post-warp archive">
+    <h2 class="post-title" style="text-align:right;padding-bottom:2em">{{ .Title }}</h2>
+    <div class="post-content">
+        {{ if eq .Title "- About -" }}
+            <div class="intro">
+                {{ $cdn_url := .Scratch.Get "cdn_url" }}
+                {{ with .Site.Params.avatar}}
+                {{ $avatar := .}}
+                <div class="avatar" style="margin-top: -50px">
+                    <img class="about" src="{{ (printf "%s%s" $cdn_url $avatar)}}"/>
+                </div>
+                {{ end }}
+                {{ with .Site.Params.subtitle}}
+                <h2 class="description" style="font-size: 16px;padding: 0.8em 0">
+                    {{ . }}
+                </h2>
+                {{ end }}
+                <div class="social-links">
+                    {{ partial "social.html" . }}
+                </div>
+            </div>
+            {{ partial "wechat.html" . }}
+        {{ end }}
+        {{ .Content }}
+    </div>
+</div>
+{{ end }}

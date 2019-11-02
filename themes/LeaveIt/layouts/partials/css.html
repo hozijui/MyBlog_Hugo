@@ -1,0 +1,29 @@
+  {{ $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify}}
+  {{ $iconfont := resources.Get "font/iconfont.css" }}
+  <link rel="stylesheet" href="{{ $iconfont.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  <style>
+    .intro {
+      transform: translateY(0px);
+      margin-bottom: 50px;
+    }
+
+    article.post {
+      margin-bottom: 80px;
+      border-bottom: #ccc 1.5px dashed;
+    }
+
+    .post-warp .post-content {
+      padding-top: 0.8rem;
+    }
+
+    .MJXc-display {
+      font-size: 18px!important;
+    }
+
+    img.about:hover {
+      transform: none!important;
+      cursor: default!important;
+    }
+  </style>
+

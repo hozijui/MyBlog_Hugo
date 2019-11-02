@@ -1,0 +1,48 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Ho_Zijui's B10g"
+theme = "LeaveIt"
+
+paginate = 10
+enableEmoji = true
+
+[Permalinks]
+  posts = "/:year/:filename/"
+
+[menu]
+  [[menu.main]]
+    name = "Weekly Report"
+    url = "/report/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 5 
+
+[params]
+    since = 2017
+    author = "Ho_Zijui"
+    avatar = "/images/me/panda.jpg"
+    subtitle = "I am a programmer, I write code"
+    home_mode = "post"
+
+[params.social]
+    GitHub = "hozijui"
+    Email = "hozijui@foxmail.com"
+	WeChat = "/images/me/wechat_qrcode.png"
