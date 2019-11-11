@@ -7,8 +7,22 @@ title: "Weekly Report"
 </div>
 
 <div style="text-align: right;font-size: 20px;margin: 1.5em 0;font-style: italic">
-    Last Updated：2019-11-04 23:41
+    Last Updated：2019-11-11 20:25
 </div>
+
+## 2019-11-04 至 2019-11-10
+### 本周完成或进展
+
+- 网页编程基础：完成实验报告并提交
+- 肿瘤只能编码系统：登录接口调通
+
+### 下周计划
+
+- 学习 SpringBoot + Drools
+- 学习 Scrapy
+
+
+<br>
 
 ## 2019-10-28 至 2019-11-03
 ### 本周完成或进展
