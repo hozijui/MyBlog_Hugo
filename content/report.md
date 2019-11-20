@@ -2,19 +2,41 @@
 title: "Weekly Report"
 ---
 
+<script type="text/javascript" src="/js/echarts.min.js"></script>
+
 <div style="text-align: right;font-size: 24px;margin-top: -2.8em">
 周 报
 </div>
 
 <div style="text-align: right;font-size: 20px;margin: 1.5em 0;font-style: italic">
-    Last Updated：2019-11-11 20:25
+    Last Updated：2019-11-20 23:47
 </div>
+
+## 近一周 Code::Stats
+
+<div id="code_stats" style="width: 100%; height: 360px"></div>
+<script type="text/javascript" src="/js/myCharts.js"></script>
+
+## 2019-11-11 至 2019-11-17
+### 本周完成或进展
+
+- 学习使用 Spring Boot 搭建 Web 项目，集成了 Spring Session 和 Mybatis，写了个肿瘤编码系统用户管理接口的demo
+- 学习 Drools 基本语法并集成到 Spring Boot 项目中
+- 学习掌握 Scrapy 基本架构与基本用法
+
+### 下周计划
+
+- 肿瘤智能编码系统：协助参与后端开发
+- 建筑行业爬虫项目：部级网页爬虫开发
+
+
+<br>
 
 ## 2019-11-04 至 2019-11-10
 ### 本周完成或进展
 
 - 网页编程基础：完成实验报告并提交
-- 肿瘤只能编码系统：登录接口调通
+- 肿瘤智能编码系统：登录接口调通
 
 ### 下周计划
 
