@@ -9,13 +9,28 @@ title: "Weekly Report"
 </div>
 
 <div style="text-align: right;font-size: 20px;margin: 1.5em 0;font-style: italic">
-    Last Updated：2019-11-20 23:47
+    Last Updated：2019-11-28 16:18
 </div>
 
 ## 近一周 Code::Stats
 
 <div id="code_stats" style="width: 100%; height: 360px"></div>
 <script type="text/javascript" src="/js/myCharts.js"></script>
+
+## 2019-11-18 至 2019-11-24
+### 本周完成或进展
+
+- 本周摸鱼，项目都没写
+- 周报页面加了近一周 Code::Stats 图表
+- 老子科目二过了哈哈哈哈哈
+
+
+### 下周计划
+
+- 建筑行业爬虫：项目搭建、基本架构
+
+
+<br>
 
 ## 2019-11-11 至 2019-11-17
 ### 本周完成或进展

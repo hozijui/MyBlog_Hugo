@@ -1,24 +1,19 @@
 let data = [
-    {xp: 15, language: "Plain text", date: "2019-11-11"},
-    {xp: 68, language: "Markdown", date: "2019-11-11"},
-    {xp: 635, language: "HTML", date: "2019-11-11"},
-    {xp: 96, language: "Java", date: "2019-11-11"},
-    {xp: 9, language: "Java", date: "2019-11-12"},
-    {xp: 2226, language: "Python", date: "2019-11-14"},
-    {xp: 9, language: "JavaScript", date: "2019-11-15"},
-    {xp: 7, language: "Plain text", date: "2019-11-15"},
-    {xp: 280, language: "XML", date: "2019-11-15"},
-    {xp: 2963, language: "Java", date: "2019-11-15"},
-    {xp: 228, language: "Properties", date: "2019-11-15"},
-    {xp: 22, language: "Vue", date: "2019-11-15"},
-    {xp: 87, language: "SQL (MySQL)", date: "2019-11-15"},
-    {xp: 8, language: "Java", date: "2019-11-16"},
-    {xp: 55, language: "XML", date: "2019-11-17"},
-    {xp: 1027, language: "Java", date: "2019-11-17"},
-    {xp: 72, language: "Properties", date: "2019-11-17"},
+    {xp: 255, language: "Go", date: "2019-11-18"},
+    {xp: 245, language: "Markdown", date: "2019-11-20"},
+    {xp: 9, language: "JSON", date: "2019-11-21"},
+    {xp: 1201, language: "JavaScript", date: "2019-11-21"},
+    {xp: 75, language: "Plain text", date: "2019-11-21"},
+    {xp: 116, language: "Markdown", date: "2019-11-21"},
+    {xp: 240, language: "HTML", date: "2019-11-21"},
+    {xp: 15, language: "Plain text", date: "2019-11-23"},
+    {xp: 2536, language: "Markdown", date: "2019-11-23"},
+    {xp: 3, language: "Vue", date: "2019-11-23"}
 ];
+
+
 let languages = Array.from(new Set(data.map(v => v.language)));
-let dates = ['2019-11-11', '2019-11-12', '2019-11-13', '2019-11-14', '2019-11-15', '2019-11-16', '2019-11-17'];
+let dates = ['2019-11-18', '2019-11-19', '2019-11-20', '2019-11-21', '2019-11-22', '2019-11-23', '2019-11-24'];
 
 let options = {
     tooltip: {
@@ -61,7 +56,7 @@ function getValue(lang) {
     let list = [];
     dates.forEach(date => {
         let index = data.findIndex(v => v.date === date && v.language === lang);
-        list = index > 0 ? list.concat(data[index].xp) : list.concat(0);
+        list = index >= 0 ? list.concat(data[index].xp) : list.concat(0);
     });
     return list;
 }
