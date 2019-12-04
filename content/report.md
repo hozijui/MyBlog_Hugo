@@ -17,6 +17,22 @@ title: "Weekly Report"
 <div id="code_stats" style="width: 100%; height: 360px"></div>
 <script type="text/javascript" src="/js/myCharts.js"></script>
 
+## 2019-11-25 至 2019-12-01
+### 本周完成或进展
+
+- 建筑行业爬虫项目搭建
+    - 开发环境搭建
+    - 全国公共资源交易平台爬取（除了交易公开）
+
+### 下周计划
+
+- 建筑行业爬虫项目
+    - MongoDB 连接鉴权
+    - Item 调整，Pipeline 根据内容去重与更新
+    - 全国建筑市场爬取
+
+<br>
+
 ## 2019-11-18 至 2019-11-24
 ### 本周完成或进展
 

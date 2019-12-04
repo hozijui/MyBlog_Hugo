@@ -1,19 +1,24 @@
 let data = [
-    {xp: 255, language: "Go", date: "2019-11-18"},
-    {xp: 245, language: "Markdown", date: "2019-11-20"},
-    {xp: 9, language: "JSON", date: "2019-11-21"},
-    {xp: 1201, language: "JavaScript", date: "2019-11-21"},
-    {xp: 75, language: "Plain text", date: "2019-11-21"},
-    {xp: 116, language: "Markdown", date: "2019-11-21"},
-    {xp: 240, language: "HTML", date: "2019-11-21"},
-    {xp: 15, language: "Plain text", date: "2019-11-23"},
-    {xp: 2536, language: "Markdown", date: "2019-11-23"},
-    {xp: 3, language: "Vue", date: "2019-11-23"}
+    {"xp": 29, "language": "Python", "date": "2019-11-25"},
+    {"xp": 1377, "language": "Python", "date": "2019-11-26"},
+    {"xp": 40, "language": "JavaScript", "date": "2019-11-28"},
+    {"xp": 3, "language": "Plain text", "date": "2019-11-28"},
+    {"xp": 229, "language": "Python", "date": "2019-11-28"},
+    {"xp": 103, "language": "Markdown", "date": "2019-11-28"},
+    {"xp": 28, "language": ".gitignore (GitIgnore)", "date": "2019-11-28"},
+    {"xp": 62, "language": "Plain text", "date": "2019-11-29"},
+    {"xp": 3815, "language": "Python", "date": "2019-11-29"},
+    {"xp": 2746, "language": "Python", "date": "2019-11-30"},
+    {"xp": 19, "language": "JavaScript", "date": "2019-12-01"},
+    {"xp": 56, "language": "Plain text", "date": "2019-12-01"},
+    {"xp": 1712, "language": "Python", "date": "2019-12-01"},
+    {"xp": 107, "language": "Markdown", "date": "2019-12-01"},
+    {"xp": 6, "language": ".gitignore (GitIgnore)", "date": "2019-12-01"}
 ];
 
 
 let languages = Array.from(new Set(data.map(v => v.language)));
-let dates = ['2019-11-18', '2019-11-19', '2019-11-20', '2019-11-21', '2019-11-22', '2019-11-23', '2019-11-24'];
+let dates = ['2019-11-25', '2019-11-26', '2019-11-27', '2019-11-28', '2019-11-29', '2019-11-30', '2019-12-01'];
 
 let options = {
     tooltip: {
@@ -49,7 +54,10 @@ let options = {
         type: 'bar',
         stack: 'total',
         data: getValue(lang)
-    }))
+    })),
+    color: ["#3e4053", "#F15854", "#5DA5DA", "#FAA43A",
+            "#60BD68", "#F17CB0", "#B2912F", "#DECF3F",
+            "#B276B2", "#4D4D4D"]
 };
 
 function getValue(lang) {
