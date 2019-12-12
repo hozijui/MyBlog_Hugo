@@ -1,29 +1,34 @@
 let data = [
-    {"xp": 29, "language": "Python", "date": "2019-11-25"},
-    {"xp": 1377, "language": "Python", "date": "2019-11-26"},
-    {"xp": 40, "language": "JavaScript", "date": "2019-11-28"},
-    {"xp": 3, "language": "Plain text", "date": "2019-11-28"},
-    {"xp": 229, "language": "Python", "date": "2019-11-28"},
-    {"xp": 103, "language": "Markdown", "date": "2019-11-28"},
-    {"xp": 28, "language": ".gitignore (GitIgnore)", "date": "2019-11-28"},
-    {"xp": 62, "language": "Plain text", "date": "2019-11-29"},
-    {"xp": 3815, "language": "Python", "date": "2019-11-29"},
-    {"xp": 2746, "language": "Python", "date": "2019-11-30"},
-    {"xp": 19, "language": "JavaScript", "date": "2019-12-01"},
-    {"xp": 56, "language": "Plain text", "date": "2019-12-01"},
-    {"xp": 1712, "language": "Python", "date": "2019-12-01"},
-    {"xp": 107, "language": "Markdown", "date": "2019-12-01"},
-    {"xp": 6, "language": ".gitignore (GitIgnore)", "date": "2019-12-01"}
+    {"xp": 45, "language": "Python", "date": "2019-12-02"},
+    {"xp": 3280, "language": "Python", "date": "2019-12-03"},
+    {"xp": 60, "language": "JavaScript", "date": "2019-12-04"},
+    {"xp": 5, "language": "Plain text", "date": "2019-12-04"},
+    {"xp": 2727, "language": "Python", "date": "2019-12-04"},
+    {"xp": 230, "language": "Markdown", "date": "2019-12-04"},
+    {"xp": 1500, "language": "Python", "date": "2019-12-05"},
+    {"xp": 67, "language": "Python", "date": "2019-12-06"},
+    {"xp": 199, "language": "C/C++", "date": "2019-12-06"},
+    {"xp": 891, "language": "Python", "date": "2019-12-07"},
+    {"xp": 1073, "language": "Python", "date": "2019-12-08"}
 ];
 
 
 let languages = Array.from(new Set(data.map(v => v.language)));
-let dates = ['2019-11-25', '2019-11-26', '2019-11-27', '2019-11-28', '2019-11-29', '2019-11-30', '2019-12-01'];
+let dates = ['2019-12-02', '2019-12-03', '2019-12-04', '2019-12-05', '2019-12-06', '2019-12-07', '2019-12-08'];
 
 let options = {
     tooltip: {
         trigger: 'axis',
-        axisPointer: { type: 'shadow' }
+        axisPointer: { type: 'shadow' },
+        formatter: (params) => {
+            let show_str = `${params[0].axisValue}<br/>`;
+            for (let param of params) {
+                if (param.data !== 0){
+                    show_str += `${param.marker}${param.seriesName}: ${param.data}<br/>`;
+                }
+            }
+            return show_str;
+        }
     },
     legend: {
         left: '2%',

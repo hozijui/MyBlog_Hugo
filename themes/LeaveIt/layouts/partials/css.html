@@ -25,5 +25,29 @@
       transform: none!important;
       cursor: default!important;
     }
+
+    .collapsible{
+      transition: max-height 0.2s ease-out;
+    }
+
+    .collapsible.hidden {
+      display: none;
+    }
+
+    h2.collapse_btn {
+      padding: .3em!important;
+      color: #2d96bd;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    h2.collapse_btn::before {
+      content: ""!important;
+    }
+
+    h2.collapse_btn:hover {
+      background-color: #eee;
+    }
+
   </style>
 

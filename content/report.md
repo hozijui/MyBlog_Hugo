@@ -9,13 +9,32 @@ title: "Weekly Report"
 </div>
 
 <div style="text-align: right;font-size: 20px;margin: 1.5em 0;font-style: italic">
-    Last Updated：2019-11-28 16:18
+    Last Updated：2019-12-12 23:35
 </div>
 
 ## 近一周 Code::Stats
 
 <div id="code_stats" style="width: 100%; height: 360px"></div>
 <script type="text/javascript" src="/js/myCharts.js"></script>
+<script type="text/javascript" src="/js/collapsible.js"></script>
+
+## 2019-12-02 至 2019-12-08
+### 本周完成或进展
+
+- 建筑行业爬虫项目
+    - 添加 BasicItem 基类
+    - MongoDB Pipeline 连接鉴权、去重与更新
+    - 全国建筑市场爬取（监管动态、政策法规）
+
+### 下周计划
+
+- 建筑行业爬虫项目
+    - 改为单个 spider
+    - start_urls 改为优先级队列，请求优先级与域名优先级关联
+    - 代理中间件
+    - git 远程仓库迁移到自建 gogs
+
+<br>
 
 ## 2019-11-25 至 2019-12-01
 ### 本周完成或进展
