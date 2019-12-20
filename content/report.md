@@ -9,7 +9,7 @@ title: "Weekly Report"
 </div>
 
 <div style="text-align: right;font-size: 20px;margin: 1.5em 0;font-style: italic">
-    Last Updated：2019-12-12 23:35
+    Last Updated：2019-12-20 13:10
 </div>
 
 ## 近一周 Code::Stats
@@ -17,6 +17,24 @@ title: "Weekly Report"
 <div id="code_stats" style="width: 100%; height: 360px"></div>
 <script type="text/javascript" src="/js/myCharts.js"></script>
 <script type="text/javascript" src="/js/collapsible.js"></script>
+
+## 2019-12-09 至 2019-12-15
+### 本周完成或进展
+
+- 建筑行业爬虫项目
+    - 改为单个 spider，在 parse 中对初始请求进行路由
+    - start_urls 改用 zset，并将子请求的优先级与初始请求的优先级关联
+    - 代理中间件配置改到 settings 中
+    - 远程仓库迁移到 gogs
+
+### 下周计划
+
+- 建筑行业爬虫项目
+    - start_urls 格式改成 json，以便初始请求携带参数
+    - 添加文件、图片的下载与存储
+    - 阿里云数据库测试，完善全国公共资源的爬取，简单部署测试
+
+<br>
 
 ## 2019-12-02 至 2019-12-08
 ### 本周完成或进展

@@ -1,20 +1,25 @@
 let data = [
-    {"xp": 45, "language": "Python", "date": "2019-12-02"},
-    {"xp": 3280, "language": "Python", "date": "2019-12-03"},
-    {"xp": 60, "language": "JavaScript", "date": "2019-12-04"},
-    {"xp": 5, "language": "Plain text", "date": "2019-12-04"},
-    {"xp": 2727, "language": "Python", "date": "2019-12-04"},
-    {"xp": 230, "language": "Markdown", "date": "2019-12-04"},
-    {"xp": 1500, "language": "Python", "date": "2019-12-05"},
-    {"xp": 67, "language": "Python", "date": "2019-12-06"},
-    {"xp": 199, "language": "C/C++", "date": "2019-12-06"},
-    {"xp": 891, "language": "Python", "date": "2019-12-07"},
-    {"xp": 1073, "language": "Python", "date": "2019-12-08"}
+    {"xp": 5, "language": "Plain text", "date": "2019-12-09"},
+    {"xp": 133, "language": "Python", "date": "2019-12-09"},
+    {"xp": 2621, "language": "Python", "date": "2019-12-10"},
+    {"xp": 2363, "language": "Python", "date": "2019-12-11"},
+    {"xp": 309, "language": "JavaScript", "date": "2019-12-12"},
+    {"xp": 114, "language": "Plain text", "date": "2019-12-12"},
+    {"xp": 466, "language": "Python", "date": "2019-12-12"},
+    {"xp": 770, "language": "Markdown", "date": "2019-12-12"},
+    {"xp": 1449, "language": "JavaScript", "date": "2019-12-13"},
+    {"xp": 57, "language": "Plain text", "date": "2019-12-13"},
+    {"xp": 3419, "language": "Python", "date": "2019-12-13"},
+    {"xp": 48, "language": "Markdown", "date": "2019-12-13"},
+    {"xp": 90, "language": "HTML", "date": "2019-12-13"},
+    {"xp": 2, "language": "Ini", "date": "2019-12-13"},
+    {"xp": 5, "language": "Plain text", "date": "2019-12-15"},
+    {"xp": 2184, "language": "Python", "date": "2019-12-15"}
 ];
 
 
 let languages = Array.from(new Set(data.map(v => v.language)));
-let dates = ['2019-12-02', '2019-12-03', '2019-12-04', '2019-12-05', '2019-12-06', '2019-12-07', '2019-12-08'];
+let dates = ['2019-12-09', '2019-12-10', '2019-12-11', '2019-12-12', '2019-12-13', '2019-12-14', '2019-12-15'];
 
 let options = {
     tooltip: {
