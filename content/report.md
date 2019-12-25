@@ -9,7 +9,7 @@ title: "Weekly Report"
 </div>
 
 <div style="text-align: right;font-size: 20px;margin: 1.5em 0;font-style: italic">
-    Last Updated：2019-12-20 13:10
+    Last Updated：2019-12-25 14:35
 </div>
 
 ## 近一周 Code::Stats
@@ -17,6 +17,23 @@ title: "Weekly Report"
 <div id="code_stats" style="width: 100%; height: 360px"></div>
 <script type="text/javascript" src="/js/myCharts.js"></script>
 <script type="text/javascript" src="/js/collapsible.js"></script>
+
+## 2019-12-16 至 2019-12-22
+### 本周完成或进展
+
+- 建筑行业爬虫项目
+    - start_urls 格式改成 json
+    - 添加文件与图片的下载，存储到 mongodb 中，在文章详情中以 url 作为外键关联
+    - 完成对河北公共资源交易平台的爬取
+
+### 下周计划
+
+- 建筑行业爬虫项目
+    - Mongodb 存储的数据库名改在 item 中指定
+    - 甲方考虑到成本问题，文件与图片的存储改为 NFS
+    - 继续爬取其他站点
+
+<br>
 
 ## 2019-12-09 至 2019-12-15
 ### 本周完成或进展
