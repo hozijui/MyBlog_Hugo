@@ -48,7 +48,7 @@ categories: ["嵌入式"]
 
 #### 硬件原理 
 
-![](/images/course-design-summary-2/led.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/course-design-summary-2/led.png)
 
   LED硬件原理如图所示。LED 1-4对应的GPIO引脚为GPB5、GPB6、GPB7、GPB8。由LED电路可知，每个LED的一端连接电阻，同时有VDD33V提供高电平，另一端则直接连接控制芯片。当控制芯片提供低电平时，即数据寄存器置0，电流通过，LED被点亮。
 
@@ -162,7 +162,7 @@ MODULE_AUTHOR("Boys Next Door"); // 🤪
 
 #### 硬件原理
 
-![](/images/course-design-summary-2/button.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/course-design-summary-2/button.png)
 
   按键硬件原理如图所示。按键1-6对应的GPIO引脚为GPG0、GPG3、GPG5、GPG6、GPG7、GPG11，同时对应有外部中断EINT8、EINT11、EINT13、EINT14、EINT15、EINT19。由按键电路可知，当按键按下时，VDD33V高电平被拉低，从而触发产生相应的中断。所以按键驱动采用中断方式实现对设备的控制。
 
@@ -408,7 +408,7 @@ rmmod myleds
 
   运行 `make menuconfig` 对现有的Linux内核配置进行修改。在 `Devices Drivers` 菜单中，选择进入 `Character devices`，找到并选中LEDs和Buttons驱动。可以看到驱动名称前的标识符为` <*>`，意思是模块直接编译进内核，修改为` < >`对应的模块将不被编译进内核，内核裁剪完成。
 
-![](/images/course-design-summary-2/menuconfig.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/course-design-summary-2/menuconfig.png)
 
   再执行```make zImage```，根据配置文件编译生成Linux内核映像文件```arch/arm/boot/zImage```。
 
@@ -418,7 +418,7 @@ rmmod myleds
 
   在Qtopia-2.2.0中运行Qt程序，需要在“设置”的“关机”中点击Terminate Server以关闭Qtopia。
 
-![](/images/course-design-summary-2/qt.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/course-design-summary-2/qt.png)
 
   还需要执行以下命令。
 ```bash

@@ -91,13 +91,13 @@ example.com {
 
 　　使用 Webhook 实现自动部署的原理很简单，就是当成功 push 到 Github 仓库时，Github 会向钩子 URL 发送请求，服务器收到请求后重新拉取仓库代码实现自动更新部署。Hugo 生成静态页面的步骤也交给服务器自动完成。
 
-![](/images/caddy-auto-deployment/1.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/caddy-auto-deployment/1.png)
 
 ### 1.在 Github 仓库中添加 Webhook
 
 　　在仓库 Settings > Webhooks 中添加 Webhook，其中Payload URL 就是钩子 URL，Secret是校验签名。
 
-![](/images/caddy-auto-deployment/2.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/caddy-auto-deployment/2.png)
 
 ### 2.配置 caddy http.git 插件
 

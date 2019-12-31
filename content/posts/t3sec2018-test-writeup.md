@@ -16,23 +16,23 @@ categories: ["WriteUp"]
 
 　　查看headers，发现Cookie中有个newpage，疑似base64
 
-![](/images/t3sec2018-test-writeup/1.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/1.png)
 
 　　解码后是一个php文件名，访问之
 
-![](/images/t3sec2018-test-writeup/2.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/2.png)
 
 　　要求以管理员身份留言，抓个包
 
 　　Cookie中有IsLogin，Post参数中有userlevel
 
-![](/images/t3sec2018-test-writeup/3.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/3.png)
 
 　　分别改成IsLogin=1，userlevel=root
 
 　　成功，Cookie中发现flag `flag{C0ngratulati0n}`
 
-![](/images/t3sec2018-test-writeup/4.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/4.png)
 
 ### 2.http://ctf4.shiyanbar.com/web/IOS/index.php
 
@@ -43,15 +43,15 @@ Mozilla/5.0 (iPhone; CPU iPhone OS 99 like Mac OS X) AppleWebKit/602.1.50 (KHTML
 
 　　改UA后，在Response Headers中发现flag `flag{LMvBi8w9$m1TrgK4}`
 
-![](/images/t3sec2018-test-writeup/5.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/5.png)
 
 ### 3.http://ctf4.shiyanbar.com/web/copy/index.php
 
-![](/images/t3sec2018-test-writeup/6.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/6.png)
 
 　　需求清晰，让服务器认为你是第1234567890个访问者，抓包
 
-![](/images/t3sec2018-test-writeup/7.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/7.png)
 
 　　又一个base64，解码后内容为`2699:0415740eaa4d9decbc8da001d3fd805f`
 
@@ -63,7 +63,7 @@ Mozilla/5.0 (iPhone; CPU iPhone OS 99 like Mac OS X) AppleWebKit/602.1.50 (KHTML
 
 　　按需求进行MD5加密后，再base64编码，改包 `flag{T4mmL9GhpaKWunPE}`
 
-![](/images/t3sec2018-test-writeup/8.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/8.png)
 
 ### 4.http://ctf4.shiyanbar.com/ste/gpg/john.tar.gz.gpg
 
@@ -77,7 +77,7 @@ Mozilla/5.0 (iPhone; CPU iPhone OS 99 like Mac OS X) AppleWebKit/602.1.50 (KHTML
 
 　　用StegSolve测试，在logo.png中找到隐写的flag，有毒 `flag{J0hn_th3_Sn1ff3r}`
 
-![](/images/t3sec2018-test-writeup/9.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/9.png)
 
 ### 5.http://ctf4.shiyanbar.com/misc/123/123.exe
 
@@ -87,11 +87,11 @@ Mozilla/5.0 (iPhone; CPU iPhone OS 99 like Mac OS X) AppleWebKit/602.1.50 (KHTML
 
 　　用winhex查看，发现是base64编码的png图片
 
-![](/images/t3sec2018-test-writeup/10.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/10.png)
 
 　　百度在线解码，得到一个二维码
 
-![](/images/t3sec2018-test-writeup/11.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/11.png)
 
 　　微信扫一扫，得flag `flag{you are beautiful}`
 
@@ -99,6 +99,6 @@ Mozilla/5.0 (iPhone; CPU iPhone OS 99 like Mac OS X) AppleWebKit/602.1.50 (KHTML
 
 　　改成html文件，将内容alert出来，发现又是base64（出题人真的很喜欢base64），解码得flag
 
-![](/images/t3sec2018-test-writeup/12.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-test-writeup/12.png)
 
 `flag{SHEllcode_IS_so_Cool}`

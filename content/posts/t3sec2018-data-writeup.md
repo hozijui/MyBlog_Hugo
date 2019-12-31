@@ -25,13 +25,13 @@ categories: ["WriteUp"]
 
   在第1个包中使用http.request过滤，发现大量扫描目录的请求，于是得到黑客的ip：202.1.1.2 和目标1的ip：**```192.168.2.20```**
 
-![](/images/t3sec2018-data-writeup/1.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-data-writeup/1.png)
 
 ### 0x02 黑客在目标1系统中注册的账号和密码
 
   注册一般通过POST方法提交注册信息，过滤http的POST方法以及源ip
 
-![](/images/t3sec2018-data-writeup/2.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-data-writeup/2.png)
 
   发现疑似注册页面的URI：/index.php/web/system/reg/，看请求参数得到答案**```hack:hack123```**
 
@@ -43,7 +43,7 @@ categories: ["WriteUp"]
 
   第3题中得到菜刀连shell的请求。
 
-![](/images/t3sec2018-data-writeup/3.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-data-writeup/3.png)
 
   `ci_session=336322580ecdc0849e195f9c4b9c451fdafe771a`
 
@@ -57,7 +57,7 @@ categories: ["WriteUp"]
 
   随后黑客在emulator目录下上传了两个文件model.php和scan.php。将木马文件上传请求中的z1参数解码就得到扫描文件的绝对路径`/var/www/html/Vwins/addons/emulator/scan.php`
 
-![](/images/t3sec2018-data-writeup/4.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-data-writeup/4.png)
 
   来看一下scan.php，发现是一个端口扫描程序，这意味着黑客的攻击进入了第二阶段，开始横向移动。
 
@@ -241,7 +241,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   在4号包里可以看到黑客连接了 192.168.1.30:7001 端口, 7001 是 WebLogic 的端口, 那么可以猜测黑客是想利用WebLogic漏洞进行攻击，目标2的ip也确定了：`192.168.1.30`
 
-![](/images/t3sec2018-data-writeup/5.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-data-writeup/5.png)
 
   过滤目的ip.dst为目标2的包，再追踪TCP流。4号包前面都是拿shell的过程，在的4787号TCP流中，黑客使用pwd命令查看了当前目录 `/usr/src/wls12130/user_projects/domains/product_display`
 
@@ -253,13 +253,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   在前两题的TCP流的最后，以及5号包TCP流中，发现了useradd命令以及使用echo修改用户密码的命令，得到黑客添加的用户名和密码 `mailer:test`
 
-![](/images/t3sec2018-data-writeup/6.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-data-writeup/6.png)
 
 ### 0x09 目标2的后台的用户名和密码是多少
 
   6号包里除了netstat就没什么有用的东西了。在7号包里过滤http，发现黑客访问了后台登录页面LoginForm.jsp，紧接着就进行了登录。在登录数据包里发现了后台的用户名和密码 `webadmin:web_pass`
 
-![](/images/t3sec2018-data-writeup/7.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-data-writeup/7.png)
 
 ### 0x0A 黑客什么时候上传了后门程序包
 
@@ -271,13 +271,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   再看看8号包里黑客利用的后门就是index，所以黑客上传后门程序包的请求就是uploadApp请求。在视图里设置时间显示格式，就得到答案 `15:23:49.475745`
 
-![](/images/t3sec2018-data-writeup/8.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-data-writeup/8.png)
 
 ### 0x0B 目标2上webshell的后台密码
 
   顺着index找，在8号包里找到了webshell的后台密码 `admin`，后面还执行了whoami，知道了后门是JShell。
 
-![](/images/t3sec2018-data-writeup/9.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-data-writeup/9.png)
 
 ### 0x0C 在目标1上的/tmp/fun文件的内容是什么
 
@@ -291,7 +291,7 @@ mergecap -w 目标文件 源文件 # 目标文件为合并后的文件名，源�
 
   追踪TCP流，发现一直到13号包，黑客都在鼓捣dnscat，dnscat是一个dns隧道工具，但是在前面的包中并没有看到使用dnscat传输数据的痕迹。而在14、15号包中则发现了大量查询中带有dnscat字样的dns包。
 
-![](/images/t3sec2018-data-writeup/10.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/t3sec2018-data-writeup/10.png)
 
   dnscat有自己的协议，需要知道它的报文格式才能对它的内容进行提取分析。我在github上找到了一个[英文版dnscat协议解析](https://github.com/iagox86/dnscat2/blob/master/doc/protocol.md)，还简书上找到了它的[中文翻译版](https://www.jianshu.com/p/42fcf74fef1c)。dnscat的报文在dns报文的查询名(Queries里的Name)字段中，根据dnscat报文格式，除了报文前的```dnscat.```前缀，报文中从第19位起就是实际的数据。
 

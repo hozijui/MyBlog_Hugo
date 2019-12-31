@@ -14,7 +14,7 @@ categories: ["云和虚拟化"]
 
 ### 架构
 
-![](/images/openstack/openstack_kilo_conceptual_arch.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/openstack/openstack_kilo_conceptual_arch.png)
 
 #### 核心服务
 
@@ -33,7 +33,7 @@ categories: ["云和虚拟化"]
 - 存储节点：运行 Cinder、Swift
 - 计算节点：运行 Hypervisor，同时运行 Neutron 服务的 agent，为虚拟机提供网络支持
 
-![](/images/openstack/openstack_arch_kilo_logical_v1.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/openstack/openstack_arch_kilo_logical_v1.png)
 
 ### OpenStack 通用设计思路
 
@@ -112,7 +112,7 @@ categories: ["云和虚拟化"]
 
 #### 操作
 
-![](/images/openstack/instance_management.png)
+![](https://blog-zijui.oss-cn-shenzhen.aliyuncs.com/images/openstack/instance_management.png)
 
 - Launch：部署instance
 
