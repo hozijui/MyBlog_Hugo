@@ -1,29 +1,29 @@
 let data = [
-    {xp: 1463, language: "Python", date: "2019-12-16"},
-    {xp: 10, language: "Java", date: "2019-12-16"},
-    {xp: 95, language: "Plain text", date: "2019-12-17"},
-    {xp: 2998, language: "Python", date: "2019-12-17"},
-    {xp: 39, language: "Plain text", date: "2019-12-18"},
-    {xp: 3483, language: "Python", date: "2019-12-18"},
-    {xp: 105, language: "JSON", date: "2019-12-19"},
-    {xp: 1103, language: "Python", date: "2019-12-19"},
-    {xp: 177, language: "Java", date: "2019-12-19"},
-    {xp: 7, language: "Drools", date: "2019-12-19"},
-    {xp: 2, language: "JSON", date: "2019-12-20"},
-    {xp: 13, language: "JavaScript", date: "2019-12-20"},
-    {xp: 27, language: "Plain text", date: "2019-12-20"},
-    {xp: 1682, language: "Python", date: "2019-12-20"},
-    {xp: 287, language: "Markdown", date: "2019-12-20"},
-    {xp: 25, language: "JSON", date: "2019-12-21"},
-    {xp: 26, language: "Plain text", date: "2019-12-21"},
-    {xp: 2992, language: "Python", date: "2019-12-21"},
-    {xp: 69, language: "JSON", date: "2019-12-22"},
-    {xp: 3790, language: "Python", date: "2019-12-22"}
+    {xp: 48, language: "Plain text", date: "2019-12-23"},
+    {xp: 206, language: "Python", date: "2019-12-23"},
+    {xp: 57, language: "Markdown", date: "2019-12-23"},
+    {xp: 22, language: ".gitignore (GitIgnore)", date: "2019-12-23"},
+    {xp: 20, language: "JSON", date: "2019-12-25"},
+    {xp: 30, language: "JavaScript", date: "2019-12-25"},
+    {xp: 4, language: "Plain text", date: "2019-12-25"},
+    {xp: 453, language: "Python", date: "2019-12-25"},
+    {xp: 331, language: "Markdown", date: "2019-12-25"},
+    {xp: 29, language: "JSON", date: "2019-12-26"},
+    {xp: 2129, language: "Python", date: "2019-12-26"},
+    {xp: 43, language: "JSON", date: "2019-12-27"},
+    {xp: 3646, language: "Python", date: "2019-12-27"},
+    {xp: 245, language: "Vue", date: "2019-12-27"},
+    {xp: 15, language: "JSON", date: "2019-12-28"},
+    {xp: 21, language: "Plain text", date: "2019-12-28"},
+    {xp: 2276, language: "Python", date: "2019-12-28"},
+    {xp: 46, language: "Plain text", date: "2019-12-29"},
+    {xp: 12, language: "HTML", date: "2019-12-29"},
+    {xp: 24, language: "TOML", date: "2019-12-29"}
 ];
 
 
 let languages = Array.from(new Set(data.map(v => v.language)));
-let dates = ['2019-12-16', '2019-12-17', '2019-12-18', '2019-12-19', '2019-12-20', '2019-12-21', '2019-12-22'];
+let dates = ['2019-12-23', '2019-12-24', '2019-12-25', '2019-12-26', '2019-12-27', '2019-12-28', '2019-12-29'];
 
 let options = {
     tooltip: {

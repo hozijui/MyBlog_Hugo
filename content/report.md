@@ -18,6 +18,24 @@ title: "Weekly Report"
 <script type="text/javascript" src="/js/myCharts.js"></script>
 <script type="text/javascript" src="/js/collapsible.js"></script>
 
+## 2019-12-23 至 2019-12-29
+### 本周完成或进展
+
+- 建筑行业爬虫项目
+    - 完成对天津公共资源交易的爬取
+    - NFS服务已搭建，但无法在 windows 环境下挂载使用
+
+- 肿瘤智能编码系统
+    - 编码结果导出 excel 改由前端实现
+
+### 下周计划
+
+- 建筑行业爬虫项目
+    - 完成 NFS Pipeline 的开发
+    - 对山东公共资源交易等其他站点的爬取
+
+<br>
+
 ## 2019-12-16 至 2019-12-22
 ### 本周完成或进展
 
