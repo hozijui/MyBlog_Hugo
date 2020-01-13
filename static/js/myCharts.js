@@ -1,29 +1,20 @@
 let data = [
-    {xp: 48, language: "Plain text", date: "2019-12-23"},
-    {xp: 206, language: "Python", date: "2019-12-23"},
-    {xp: 57, language: "Markdown", date: "2019-12-23"},
-    {xp: 22, language: ".gitignore (GitIgnore)", date: "2019-12-23"},
-    {xp: 20, language: "JSON", date: "2019-12-25"},
-    {xp: 30, language: "JavaScript", date: "2019-12-25"},
-    {xp: 4, language: "Plain text", date: "2019-12-25"},
-    {xp: 453, language: "Python", date: "2019-12-25"},
-    {xp: 331, language: "Markdown", date: "2019-12-25"},
-    {xp: 29, language: "JSON", date: "2019-12-26"},
-    {xp: 2129, language: "Python", date: "2019-12-26"},
-    {xp: 43, language: "JSON", date: "2019-12-27"},
-    {xp: 3646, language: "Python", date: "2019-12-27"},
-    {xp: 245, language: "Vue", date: "2019-12-27"},
-    {xp: 15, language: "JSON", date: "2019-12-28"},
-    {xp: 21, language: "Plain text", date: "2019-12-28"},
-    {xp: 2276, language: "Python", date: "2019-12-28"},
-    {xp: 46, language: "Plain text", date: "2019-12-29"},
-    {xp: 12, language: "HTML", date: "2019-12-29"},
-    {xp: 24, language: "TOML", date: "2019-12-29"}
+    {xp: 33, language: "Python", date: "2020-01-06"},
+    {xp: 41, language: "JSON", date: "2020-01-07"},
+    {xp: 770, language: "Python", date: "2020-01-07"},
+    {xp: 4, language: "Plain text", date: "2020-01-08"},
+    {xp: 2107, language: "Python", date: "2020-01-08"},
+    {xp: 42, language: "JavaScript", date: "2020-01-09"},
+    {xp: 1639, language: "Python", date: "2020-01-09"},
+    {xp: 18, language: "JSON", date: "2020-01-11"},
+    {xp: 11, language: "Plain text", date: "2020-01-11"},
+    {xp: 6103, language: "Python", date: "2020-01-11"},
+    {xp: 3588, language: "Python", date: "2020-01-12"}
 ];
 
 
 let languages = Array.from(new Set(data.map(v => v.language)));
-let dates = ['2019-12-23', '2019-12-24', '2019-12-25', '2019-12-26', '2019-12-27', '2019-12-28', '2019-12-29'];
+let dates = ['2020-01-06', '2020-01-07', '2020-01-08', '2020-01-09', '2020-01-10', '2020-01-11', '2020-01-12'];
 
 let options = {
     tooltip: {

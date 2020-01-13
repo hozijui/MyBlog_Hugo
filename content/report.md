@@ -9,7 +9,7 @@ title: "Weekly Report"
 </div>
 
 <div style="text-align: right;font-size: 20px;margin: 1.5em 0;font-style: italic">
-    Last Updated：2019-12-25 14:35
+    Last Updated：2020-01-13 23:53
 </div>
 
 ## 近一周 Code::Stats
@@ -17,6 +17,22 @@ title: "Weekly Report"
 <div id="code_stats" style="width: 100%; height: 360px"></div>
 <script type="text/javascript" src="/js/myCharts.js"></script>
 <script type="text/javascript" src="/js/collapsible.js"></script>
+
+## 2019-12-31 至 2020-01-12
+### 本周完成或进展
+
+- 建筑行业爬虫项目
+    - 完成 NFS Pipeline 的开发，并修改已完成的爬取脚本的文件下载部分
+    - 完成对山东、河南、陕西三省的公共资源交易网站的爬取
+    - 单个请求手动入队工具脚本
+
+### 下周计划
+
+- 建筑行业爬虫项目
+    - 完成 3 个其他站点的爬取，爬取站点总数达到 20 个
+    - 肥家过年 😀
+
+<br>
 
 ## 2019-12-23 至 2019-12-29
 ### 本周完成或进展
