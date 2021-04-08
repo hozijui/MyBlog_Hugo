@@ -35,8 +35,11 @@ jQuery(function($) {
         $('body').toggleClass('dark-theme', isDark)
         $('.theme-switch').on('click', () => {
             $('body').toggleClass('dark-theme')
-            window.localStorage &&
-                window.localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light', )
+            const newTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light'
+            window.localStorage && window.localStorage.setItem('theme', newTheme, )
+            let setItemEvent = new Event("setItemEvent");
+            setItemEvent.newValue = newTheme;
+            window.dispatchEvent(setItemEvent);
         })
     }
 

@@ -1,10 +1,38 @@
+function dateformat(date) {
+    return [{ year: 'numeric' }, { month: '2-digit' }, { day: '2-digit' }]
+        .map((m) => new Intl.DateTimeFormat('en', m).format(date))
+        .join('-');
+}
+
+function getDates(startDate, days) {
+    let dateArray = [];
+    while (days >= 0) {
+        let tmp = new Date(startDate);
+        tmp.setDate(tmp.getDate() - days);
+        dateArray.push(dateformat(tmp))
+        days--;
+    }
+    return dateArray;
+}
+
+function getValue(data, lang, dates) {
+    let list = [];
+    dates.forEach(date => {
+        let index = data.findIndex(v => v.date === date && v.language === lang);
+        list = index >= 0 ? list.concat(data[index].xp) : list.concat(0);
+    });
+    return list;
+}
+
+const dates = getDates(new Date(), 6);
+const since = dates[0];
+
 let xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
         let data = JSON.parse(xhr.responseText)['data']['profile']['day_language_xps'];
         let languages = Array.from(new Set(data.map(v => v.language)));
-        let dates = Array.from(new Set(data.map(v => v.date)));
 
         let options = {
             tooltip: {
@@ -39,7 +67,7 @@ xhr.onreadystatechange = () => {
                 axisLabel: {
                     margin: 15
                 },
-                data: dates
+                data: dates.map(v => v.slice(5))
             },
             yAxis: {
                 type: 'value'
@@ -48,37 +76,21 @@ xhr.onreadystatechange = () => {
                 name: lang,
                 type: 'bar',
                 stack: 'total',
-                data: getValue(lang)
-            })),
-            color: ["#3e4053", "#F15854", "#5DA5DA", "#FAA43A",
-                "#60BD68", "#F17CB0", "#B2912F", "#DECF3F",
-                "#B276B2", "#4D4D4D"]
+                data: getValue(data, lang, dates)
+            }))
         };
 
-        function getValue(lang) {
-            let list = [];
-            dates.forEach(date => {
-                let index = data.findIndex(v => v.date === date && v.language === lang);
-                list = index >= 0 ? list.concat(data[index].xp) : list.concat(0);
-            });
-            return list;
-        }
-
-        let myChart = echarts.init(document.querySelector('#code_stats'), 'macarons');
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        let myChart = echarts.init(document.querySelector('#code_stats'), currentTheme);
         myChart.setOption(options);
         window.addEventListener("resize", () => myChart.resize());
+        window.addEventListener("setItemEvent", function (e) {
+            myChart.dispose();
+            myChart = echarts.init(document.querySelector('#code_stats'), e.newValue);
+            myChart.setOption(options);
+        });
     }
 };
-
-function dateformat(date) {
-    return [{ year: 'numeric' }, { month: '2-digit' }, { day: '2-digit' }]
-        .map((m) => new Intl.DateTimeFormat('en', m).format(date))
-        .join('-');
-}
-
-let date = new Date().getTime();
-date -= date % 86400000 + 14*86400000;
-const since = dateformat(new Date().setTime(date));
 
 xhr.open('POST', 'https://www.hozijui.com/codestats');
 xhr.send(`{profile(username: "zjui") {day_language_xps: dayLanguageXps(since: "${since}") {date language xp}}}`);
