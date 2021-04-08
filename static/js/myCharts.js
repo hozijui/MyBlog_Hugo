@@ -81,7 +81,7 @@ xhr.onreadystatechange = () => {
         };
 
         const currentTheme = window.localStorage && window.localStorage.getItem('theme');
-        let myChart = echarts.init(document.querySelector('#code_stats'), currentTheme);
+        let myChart = echarts.init(document.querySelector('#code_stats'), currentTheme || 'light');
         myChart.setOption(options);
         window.addEventListener("resize", () => myChart.resize());
         window.addEventListener("setItemEvent", function (e) {
